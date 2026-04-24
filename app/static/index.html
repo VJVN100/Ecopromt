@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoRouter - Intelligent AI Resource Orchestrator</title>
+    <meta name="description" content="Ask a question. We optimize for speed and carbon footprint.">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1 class="logo"><i class="fa-solid fa-seedling"></i> EcoRouter</h1>
+            <p class="subtitle">Ask a question. We optimize for speed and carbon footprint.</p>
+        </header>
+
+        <main>
+            <div class="search-container glass-panel">
+                <form id="prompt-form">
+                    <div class="input-wrapper">
+                        <select id="engine-select" name="engine">
+                            <option value="Auto">Auto</option>
+                            <option value="Local">Local</option>
+                            <option value="Cloud">Cloud</option>
+                        </select>
+                        <input type="text" id="prompt-input" name="prompt" placeholder="Ask EcoRouter..." autocomplete="off">
+                        <button type="submit" id="submit-btn">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="loading-indicator" class="hidden">
+                <div class="spinner"></div>
+                <p>Analyzing Complexity & Routing...</p>
+            </div>
+            
+            <div id="error-toast" class="toast hidden">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span id="error-message"></span>
+            </div>
+
+            <div id="result-container" class="glass-panel hidden">
+                <div class="response-header">
+                    <h3 id="engine-badge"><i class="fa-solid fa-robot"></i> <span id="engine-name">Response</span></h3>
+                </div>
+                <div id="response-content" class="response-content">
+                    <!-- Response will be injected here -->
+                </div>
+                
+                <hr class="divider">
+                
+                <div class="impact-dashboard">
+                    <h4><i class="fa-solid fa-chart-line"></i> EcoRouter Impact Dashboard</h4>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <span class="metric-label">ESIF Score</span>
+                            <div class="metric-value-row">
+                                <span class="metric-value" id="esif-value">0/100</span>
+                                <span class="metric-delta" id="esif-delta"></span>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Est. CO2 Saved</span>
+                            <div class="metric-value-row">
+                                <span class="metric-value" id="co2-value">0g</span>
+                                <span class="metric-delta" id="co2-delta"></span>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Time Taken</span>
+                            <div class="metric-value-row">
+                                <span class="metric-value" id="time-value">0s</span>
+                                <span class="metric-delta neutral" id="token-delta">0 Tokens</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="complexity-caption" id="complexity-caption"></p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built for NEXUS AI Hackathon 2026 | EcoRouter v1.0</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
