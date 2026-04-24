@@ -1,20 +1,55 @@
 # 🌱 EcoRouter: Intelligent AI Resource Orchestrator
 
-## The Vision
-Sustainability meets Efficiency. The AI revolution is rapidly increasing global carbon emissions and API costs. EcoRouter solves this unseen environmental crisis by acting as a lightweight, intelligent middleware proxy. EcoRouter dynamically analyzes your prompt's complexity—if it's a simple query, it routes it to a local machine with zero emissions. If it requires heavy lifting, it fails over to the cloud. You get faster responses, lower API bills, and a verified reduction in your carbon footprint via our custom Efficiency impact formula.
+**EcoRouter** is a sustainable AI middleware that prevents *Model Overkill* by intelligently routing prompts between **local LLMs (Ollama)** and **cloud APIs (Gemini)** based on complexity.
 
-## Technical Architecture
-EcoRouter's orchestration layer leverages a split-brain approach:
-- **FastAPI / Python Core**: Analyzes complexity and optimizes strings in < 200ms using zero external NLP dependencies.
-- **Local Engine (Ollama/Phi-3)**: Handles lightweight mathematical queries, basic definitions, and greetings locally without invoking remote networks.
-- **Cloud Engine (Gemini 1.5)**: Deeply integrates with Google Generative AI for complex, multi-stage reasoning or coding queries.
-- **Streamlit Interface**: Provides a dynamic "Eco-Growth Green" Dashboard showcasing live impact metrics (ESIF Score, CO2 Saved, and Tokens Bypassed).
+---
+
+## 🚀 Why EcoRouter?
+
+Most AI systems send every query to large cloud models — even simple ones.
+
+**Result:**
+- ⚡ Wasted compute
+- 💰 Higher API cost
+- 🌍 Increased carbon footprint
+
+---
+
+## 💡 What We Built
+
+EcoRouter acts as a **smart routing layer**:
+
+- 🧠 **Complexity Engine** → Decides local vs cloud (<200ms)
+- ✂️ **Prompt Optimizer** → Reduces token usage (10–20%)
+- 📊 **ESIF Score** → Measures efficiency per request
+- 🔄 **Failover System** → Ensures reliability
+
+---
+
+## 🏗️ Tech Stack
+
+- **Frontend:** HTML, CSS, Vanilla JavaScript
+- **Backend:** FastAPI (Python)
+- **Local Model:** Ollama (Phi-3)
+- **Cloud Model:** Gemini 1.5 Flash
+
+---
+
+## 📊 ESIF Formula
+`ESIF = ((W_model × 100) - (T_total × 5)) / L_tokens`
+
+- Local model → higher score
+- Faster response → higher score
+- Fewer tokens → higher score
+
+---
 
 ## Installation Instructions
 
 1. **Clone the Repository and Navigate to Root:**
    ```bash
-   cd Eco_prompt
+   git clone https://github.com/VJVN100/Ecopromt.git
+   cd Ecopromt
    ```
 2. **Create and Activate a Virtual Environment:**
    ```powershell
@@ -23,16 +58,18 @@ EcoRouter's orchestration layer leverages a split-brain approach:
    ```
 3. **Install Core Dependencies:**
    ```bash
-   pip install streamlit fastapi textblob python-dotenv uvicorn ollama google-generativeai
+   pip install fastapi textblob python-dotenv uvicorn ollama google-generativeai
    ```
 4. **Configure your Environment:**
-   Open the `.env` template or the Streamlit sidebar inside the app to input your `GEMINI_API_KEY`.
+   Ensure the `.env` file exists and input your `GEMINI_API_KEY`.
 5. **Install Ollama (Optional for Local Routing):**
    Download the daemon from [ollama.com](https://ollama.com). In a second terminal, run `ollama serve`.
-6. **Launch EcoRouter!**
+6. **Launch EcoRouter Backend!**
    ```bash
-   streamlit run app/ui/main_page.py
+   uvicorn main:app --reload
    ```
+7. **Access the application:**
+   Navigate to `http://127.0.0.1:8000` to interact with the web interface.
 
 ---
 *Built for the NEXUS AI Hackathon 2026* | EcoRouter v1.0
